@@ -20,8 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3874975-3790-47bc-bee8-9ac72b49e914" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_1_5_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_3_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualizer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Visualizer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stk/VisualizerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stk/VisualizerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stk/VisualizerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stk/VisualizerApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stk/VisualizerApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stk/VisualizerApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/SpringBoot.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/SpringBoot.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +66,38 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.VisualizerApplication">
+    <configuration name="VisualizerApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Visualizer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stk" />
+      <option name="MAIN_CLASS_NAME" value="com.stk.VisualizerApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VisualizerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Visualizer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.stk.VisualizerApplication" />
@@ -68,6 +105,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.VisualizerApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpringBootOptions">
+    <option name="showAdditionalConfigNotification" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -81,6 +126,7 @@
       <updated>1601886371071</updated>
       <workItem from="1601886377351" duration="3513000" />
       <workItem from="1601889933332" duration="526000" />
+      <workItem from="1601968241240" duration="4715000" />
     </task>
     <servers />
   </component>
@@ -104,37 +150,61 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1389" y="356" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601888898357" />
-    <state width="938" height="276" key="GridCell.Tab.0.bottom" timestamp="1601889914028">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1028" y="410" key="#com.intellij.ide.util.MemberChooser" timestamp="1601969985018">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1028" y="410" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601969985018" />
+    <state x="1273" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601972829250">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1273" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601972829250" />
+    <state x="1003" y="448" key="FileChooserDialogImpl" timestamp="1601968440993">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1003" y="448" key="FileChooserDialogImpl/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601968440993" />
+    <state width="1680" height="365" key="GridCell.Tab.0.bottom" timestamp="1601973440542">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="938" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601889914028" />
-    <state width="938" height="276" key="GridCell.Tab.0.center" timestamp="1601889914028">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1680" height="365" key="GridCell.Tab.0.bottom/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601973440542" />
+    <state width="1680" height="365" key="GridCell.Tab.0.center" timestamp="1601973440542">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="938" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601889914028" />
-    <state width="938" height="276" key="GridCell.Tab.0.left" timestamp="1601889914028">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1680" height="365" key="GridCell.Tab.0.center/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601973440542" />
+    <state width="1680" height="365" key="GridCell.Tab.0.left" timestamp="1601973440542">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="938" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601889914028" />
-    <state width="938" height="276" key="GridCell.Tab.0.right" timestamp="1601889914028">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1680" height="365" key="GridCell.Tab.0.left/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601973440542" />
+    <state width="1680" height="365" key="GridCell.Tab.0.right" timestamp="1601973440542">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="938" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601889914028" />
-    <state width="938" height="276" key="GridCell.Tab.1.bottom" timestamp="1601889914028">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1680" height="365" key="GridCell.Tab.0.right/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601973440542" />
+    <state width="1680" height="365" key="GridCell.Tab.1.bottom" timestamp="1601973440542">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="938" height="276" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601889914028" />
-    <state width="938" height="276" key="GridCell.Tab.1.center" timestamp="1601889914028">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1680" height="365" key="GridCell.Tab.1.bottom/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601973440542" />
+    <state width="1680" height="365" key="GridCell.Tab.1.center" timestamp="1601973440542">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="938" height="276" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601889914028" />
-    <state width="938" height="276" key="GridCell.Tab.1.left" timestamp="1601889914028">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1680" height="365" key="GridCell.Tab.1.center/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601973440542" />
+    <state width="1680" height="365" key="GridCell.Tab.1.left" timestamp="1601973440542">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="938" height="276" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601889914028" />
-    <state width="938" height="276" key="GridCell.Tab.1.right" timestamp="1601889914028">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1680" height="365" key="GridCell.Tab.1.left/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601973440542" />
+    <state width="1680" height="365" key="GridCell.Tab.1.right" timestamp="1601973440542">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="938" height="276" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601889914028" />
+    <state width="1680" height="365" key="GridCell.Tab.1.right/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601973440542" />
+    <state x="703" y="268" key="SettingsEditor" timestamp="1601971534923">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="703" y="268" key="SettingsEditor/0.0.2560.1440/-2560.0.2560.1440@0.0.2560.1440" timestamp="1601971534923" />
   </component>
 </project>

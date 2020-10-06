@@ -1,7 +1,5 @@
 server:
   port: 8081
-
-#指定环境
 spring:
   profiles:
     active: dev

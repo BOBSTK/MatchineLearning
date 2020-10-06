@@ -69,10 +69,6 @@ student:
 student: {name: qinjiang,age: 3}
 ```
 
- 
-
- 
-
 **数组（ List、set ）**
 
 用 - 值表示数组中的一个元素,比如：
@@ -99,4 +95,177 @@ server:
   port: 8082
 ```
 
- 
+### 3.1 直接给实体类赋值
+
+- 在yaml中配置类
+
+  ```yaml
+  person:
+    name: BC${random.uuid} # 随机uuid
+    age: ${random.int}   # 随机int
+    happy: false
+    birth: 2019/11/02
+    maps: {k1: v1,k2: v2}
+    lists:
+      - code
+      - music
+      - girl
+    dog:
+      name: ${person.hello:hello}_旺财  #默认值
+      age: 3
+  ```
+
+- 在实体类中注解
+
+  ```java
+  @ConfigurationProperties(prefix = "person") //将实体类和yaml中的配置类绑定
+  /*
+  将配置文件中配置的每一个属性的值，映射到这个组件中；
+  告诉SpringBoot将本类中的所有属性和配置文件中相关的配置进行绑定
+  参数 prefix = “person” : 将配置文件中的person下面的所有属性一一对应
+   */
+  ```
+
+- 需要导入一个依赖，不影响程序运行
+
+  ```xml
+  <!-- 导入配置文件处理器，配置文件进行绑定就会有提示，需要重启-->
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-configuration-processor</artifactId>
+              <optional>true</optional>
+          </dependency>
+  ```
+
+- 加载指定的配置文件
+
+  - **@PropertySource ：**加载指定的配置文件； 
+
+    `@PropertySource(value = "classpath:person.properties")`
+
+  - **@configurationProperties**：默认从全局配置文件中获取值；
+
+![img](E:\Code\MachineLearning\MatchineLearning\笔记\SpringBoot\1418974-20200310172022780-374285033.png)
+
+### 3.2 JSR303数据校验
+
+> 是什么
+
+- 在字段是增加一层**过滤器**验证 ， 可以保证数据的**合法性**
+
+> 怎么做
+
+- 导入依赖
+
+  ```xml
+  <!-- 导入数据验证-->
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-validation</artifactId>
+          </dependency>
+  ```
+
+- 实体类注解
+
+  `@Validated //数据校验`
+
+  `@Email()`
+
+> 常见参数
+
+```java
+@NotNull(message="名字不能为空")
+private String userName;
+@Max(value=120,message="年龄最大不能查过120")
+private int age;
+@Email(message="邮箱格式错误")
+private String email;
+
+空检查
+@Null       验证对象是否为null
+@NotNull    验证对象是否不为null, 无法查检长度为0的字符串
+@NotBlank   检查约束字符串是不是Null还有被Trim的长度是否大于0,只对字符串,且会去掉前后空格.
+@NotEmpty   检查约束元素是否为NULL或者是EMPTY.
+    
+Booelan检查
+@AssertTrue     验证 Boolean 对象是否为 true  
+@AssertFalse    验证 Boolean 对象是否为 false  
+    
+长度检查
+@Size(min=, max=) 验证对象（Array,Collection,Map,String）长度是否在给定的范围之内  
+@Length(min=, max=) string is between min and max included.
+
+日期检查
+@Past       验证 Date 和 Calendar 对象是否在当前时间之前  
+@Future     验证 Date 和 Calendar 对象是否在当前时间之后  
+@Pattern    验证 String 对象是否符合正则表达式的规则
+
+.......等等
+除此以外，我们还可以自定义一些数据校验规则
+```
+
+### 3.3 多环境配置
+
+> 为什么
+
+- 通过激活不同的环境版本，实现快速**切换环境**
+
+> 是什么
+
+- 优先级
+
+  - 优先级**由高到低**，高优先级的配置会**覆盖**低优先级的配置
+
+  ```txt
+  优先级1：项目路径下的config文件夹配置文件
+  优先级2：项目路径下配置文件
+  优先级3：资源路径下的config文件夹配置文件
+  优先级4：资源路径下配置文件
+  ```
+
+- 如果yml和properties同时都配置了端口，并且没有激活其他环境 ， **默认会使用properties配置文件的**
+
+> 怎么做
+
+```yaml
+server:
+  port: 8081
+
+#指定环境
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8082
+spring:
+  profiles: dev
+---
+server:
+  port: 8083
+spring:
+  profiles: test
+
+```
+
+
+
+##  四、注解开发
+
+@Component       组件
+
+@Service               service
+
+@Controller          controller
+
+@Repository         dao
+
+
+
+> 属性赋值
+
+- `@Value("${value}")` 
+  - 环境变量赋值
+    - 从**配置文件**读取值 `@Value("${savePath}")`  
+- `@Autowired`
+  - 按类型**装配依赖对象**, 给指定的字段或方法注入所需的外部资源
