@@ -269,3 +269,62 @@ spring:
     - 从**配置文件**读取值 `@Value("${savePath}")`  
 - `@Autowired`
   - 按类型**装配依赖对象**, 给指定的字段或方法注入所需的外部资源
+
+## 五、SpringBoot Web 开发
+
+> SpringBoot 配置
+
+- **xxxxAutoConfigurartion：自动配置类；**给容器中添加组件
+- **xxxxProperties:封装配置文件中相关属性；**
+
+> 要解决的问题
+
+- 导入静态资源
+- 首页
+- jsp，模板引擎Thymeleaf
+- 装配扩展SpringMVC
+- 增删改查
+- 拦截器
+- 国际化
+
+### 5.1 加载静态资源
+
+> 添加资源处理器
+
+```java
+ public void addResourceHandlers(ResourceHandlerRegistry registry) {
+            if (!this.resourceProperties.isAddMappings()) {
+                logger.debug("Default resource handling disabled");
+            } else {
+                Duration cachePeriod = this.resourceProperties.getCache().getPeriod();
+                CacheControl cacheControl = this.resourceProperties.getCache().getCachecontrol().toHttpCacheControl();
+                if (!registry.hasMappingForPattern("/webjars/**")) {
+                    this.customizeResourceHandlerRegistration(registry.addResourceHandler(new String[]{"/webjars/**"}).addResourceLocations(new String[]{"classpath:/META-INF/resources/webjars/"}).setCachePeriod(this.getSeconds(cachePeriod)).setCacheControl(cacheControl));
+                }
+
+                String staticPathPattern = this.mvcProperties.getStaticPathPattern();
+                if (!registry.hasMappingForPattern(staticPathPattern)) {
+                    this.customizeResourceHandlerRegistration(registry.addResourceHandler(new String[]{staticPathPattern}).addResourceLocations(WebMvcAutoConfiguration.getResourceLocations(this.resourceProperties.getStaticLocations())).setCachePeriod(this.getSeconds(cachePeriod)).setCacheControl(cacheControl));
+                }
+
+            }
+        }
+```
+
+- webjars  
+
+  `META-INF/resources/webjars/`
+
+- resources下文件夹
+
+  `private static final String[] CLASSPATH_RESOURCE_LOCATIONS = new String[]{"classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/"};`
+
+  - resources  上传文件
+  - static    静态资源 图片
+  - public   公共资源 js
+  - 对静态资源的访问会在下面文件夹中找
+
+### 5.2 首页
+
+- 在文件中加入index.html文件
+
