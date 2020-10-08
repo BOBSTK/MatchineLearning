@@ -324,7 +324,54 @@ spring:
   - public   公共资源 js
   - 对静态资源的访问会在下面文件夹中找
 
-### 5.2 首页
+### 5.2 首页与模板引擎
 
 - 在文件中加入index.html文件
+
+> 为什么
+
+- 写一个页面模板
+
+> 是什么
+
+- Thymeleaf、freemarker、JSP
+
+> 导入
+
+```xml
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+```
+
+> 怎么用
+
+- 将html放在templates目录下
+- 头文件约束 `<html lang="en"  xmlns:th="http://www.thymeleaf.org">`
+- 所有html元素都可以被Thymeleaf接管
+
+> 基础语法
+
+- 遍历
+  - `<h3 th:each="user: ${users}" th:text="${user}"> </h3>`
+
+### 5.3 扩展MVC
+
+> 怎么做
+
+- 编写一个@Configuration注解类，并且类型要为WebMvcConfigurer
+
+- ```java
+  //应为类型要求为WebMvcConfigurer，所以我们实现其接口
+  //可以使用自定义类扩展MVC的功能
+  @Configuration
+  public class MyMVCConfig implements WebMvcConfigurer {
+      //视图跳转
+      @Override
+      public void addViewControllers(ViewControllerRegistry registry) {
+          registry.addViewController("/kuang").setViewName("test");
+      }
+  }
+  ```
 
