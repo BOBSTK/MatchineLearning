@@ -360,7 +360,7 @@ spring:
 
 > 怎么做
 
-- 编写一个@Configuration注解类，并且类型要为WebMvcConfigurer
+- 编写一个@Configuration注解类，并且类型要为**WebMvcConfigurer**
 
 - ```java
   //应为类型要求为WebMvcConfigurer，所以我们实现其接口
@@ -375,3 +375,4 @@ spring:
   }
   ```
 
+## 六、员工管理系统
