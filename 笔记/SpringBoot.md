@@ -376,3 +376,24 @@ spring:
   ```
 
 ## 六、员工管理系统
+
+### 6.1 首页
+
+- 一般用扩展MVC config配置
+
+  ```java
+  @Configuration
+  public class MyMVCConfig implements WebMvcConfigurer {
+      //视图跳转
+      @Override
+  
+      public void addViewControllers(ViewControllerRegistry registry) {
+          //一般用来配置首页
+          registry.addViewController("/").setViewName("index");
+          registry.addViewController("/index.html").setViewName("index");
+      }
+  }
+  ```
+
+- 所有页面的**静态资源**都要使用Thymeleaf接管 @{}
+
