@@ -260,7 +260,7 @@ spring:
 
 @Repository         dao
 
-
+@ResponseBody   在使用此注解之后不会再走视图处理器，而是直接将数据写入到输入流中
 
 > 属性赋值
 
@@ -269,6 +269,10 @@ spring:
     - 从**配置文件**读取值 `@Value("${savePath}")`  
 - `@Autowired`
   - 按类型**装配依赖对象**, 给指定的字段或方法注入所需的外部资源
+- `@RequestParam(value=”参数名”,required=”true/false”,defaultValue=””)`
+  - **value**：参数名
+  - **required**：是否包含该参数，默认为true，表示该请求路径中必须包含该参数，如果不包含就报错。
+  - **defaultValue**：默认参数值，如果设置了该值，required=true将失效，自动为false,如果没有传该参数，就使用默认值
 
 ## 五、SpringBoot Web 开发
 
@@ -395,5 +399,7 @@ spring:
   }
   ```
 
-- 所有页面的**静态资源**都要使用Thymeleaf接管 @{}
+- 所有页面的**静态资源**都要使用Thymeleaf接管 @{url}
+
+### 6.2 登录功能实现
 

@@ -13,5 +13,6 @@ public class MyMVCConfig implements WebMvcConfigurer {
         //一般用来配置首页
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/index.html").setViewName("index");
+        registry.addViewController("/main.html").setViewName("dashboard"); //main.html是虚拟的，用来重定向，隐藏用户请求信息
     }
 }
