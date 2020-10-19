@@ -8,7 +8,14 @@ from PIL import  Image
 import  scipy
 from scipy import  ndimage
 
-np.random.seed(1)
+np.random.seed(1) #随机数种子
+plt.rcParams['figure.figsize'] = (5.0, 4.0) # set default size of plots
+plt.rcParams['image.interpolation'] = 'nearest'
+plt.rcParams['image.cmap'] = 'gray'
+
+
+
+
 
 # 加载数据 (cat/non-cat)
 # train_x_orig ：保存的是训练集里面的图像数据（本训练集有209张64x64的图像）
@@ -18,6 +25,7 @@ np.random.seed(1)
 # classes ： 保存的是以bytes类型保存的两个字符串数据，数据为：[b’non-cat’ b’cat’]
 # _orig 图片需要预处理，而标签不用
 train_x_orig, train_y, test_x_orig, test_y, classes = load_dataset()
+
 
 #计算样本参数
 m_train = train_x_orig.shape[0]
